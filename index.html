@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<base target="_blank">
+<title>The Prom Editorial 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blush:#f0b8cc;
+  --blush-lt:#fce8ef;
+  --gold:#c9a96e;
+  --dark:#111118;
+  --mid:#3a3a3a;
+  --cream:#fdf9f5;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth;width:100%;overflow-x:hidden}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--white);
+  color:var(--dark);
+  overflow-x:hidden;
+  width:100%;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* ── FIX GOOGLE SITES IFRAME ── */
+html,body{
+  max-width:100% !important;
+  min-width:0 !important;
+}
+
+/* TOP BAR */
+.topbar{
+  background:var(--dark);color:var(--gold);
+  text-align:center;padding:10px 16px;
+  font-size:10px;letter-spacing:3px;font-weight:500;text-transform:uppercase;
+  width:100%;
+}
+
+/* HEADER */
+.site-header{
+  background:var(--white);border-bottom:1px solid #e8e0d8;
+  padding:16px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+  width:100%;
+}
+.logo{
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;color:var(--dark);
+  text-decoration:none;
+}
+.logo span{color:var(--blush)}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--mid);text-decoration:none;font-weight:500;
+}
+.nav-links a:hover{color:var(--blush)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  width:100%;
+  height:420px;
+  overflow:hidden;
+  display:flex;align-items:flex-end;justify-content:flex-start;
+}
+.hero-img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 15%;
+  display:block;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top,rgba(10,10,18,.88) 0%,rgba(10,10,18,.2) 55%,transparent 100%),
+    linear-gradient(to right,rgba(10,10,18,.5) 0%,transparent 65%);
+}
+.hero-content{
+  position:relative;z-index:2;
+  padding:0 24px 40px;
+  width:100%;
+}
+.hero-eyebrow{
+  display:inline-block;color:var(--gold);
+  font-size:9px;letter-spacing:4px;text-transform:uppercase;font-weight:500;
+  margin-bottom:12px;border-left:2px solid var(--gold);padding-left:10px;
+}
+.hero-content h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,8vw,56px);font-weight:600;
+  line-height:1.08;color:var(--white);margin-bottom:12px;
+}
+.hero-content h1 em{font-style:italic;color:var(--blush)}
+.hero-sub{
+  color:rgba(255,255,255,.7);font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;font-weight:300;
+  margin-bottom:22px;
+}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-badge{
+  display:inline-block;border:1px solid rgba(255,255,255,.4);
+  padding:11px 24px;color:white;font-size:10px;letter-spacing:2.5px;
+  text-transform:uppercase;text-decoration:none;font-family:'Jost',sans-serif;
+  transition:all .3s;
+}
+.hero-badge:hover{background:rgba(255,255,255,.1);border-color:var(--blush);color:var(--blush)}
+.hero-badge.filled{
+  background:var(--blush);border-color:var(--blush);color:var(--dark);font-weight:600;
+}
+
+/* ORNAMENT */
+.ornament-divider{text-align:center;padding:44px 20px 10px}
+.ornament-divider .script{
+  font-family:'Great Vibes',cursive;font-size:42px;color:var(--blush);
+  line-height:1;display:block;
+}
+.ornament-divider .line{
+  display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px;
+}
+.ornament-divider .line::before,.ornament-divider .line::after{
+  content:'';height:1px;width:60px;
+  background:linear-gradient(to right,transparent,var(--gold));
+}
+.ornament-divider .line::after{background:linear-gradient(to left,transparent,var(--gold))}
+.ornament-divider .diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+
+/* EDITORIAL */
+.editorial-section{
+  padding:28px 24px 52px;text-align:center;
+  max-width:680px;margin:0 auto;
+}
+.editorial-section h2{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(20px,4vw,30px);color:var(--mid);
+  margin-bottom:18px;font-weight:400;line-height:1.4;
+}
+.editorial-section p{font-size:14px;line-height:1.9;color:#555;font-weight:300}
+.editorial-section p b{font-weight:600;color:var(--dark)}
+
+/* STATS */
+.stats-bar{
+  background:var(--cream);display:flex;justify-content:center;
+  border-top:1px solid #e8e0d8;border-bottom:1px solid #e8e0d8;
+  width:100%;flex-wrap:wrap;
+}
+.stat-item{
+  text-align:center;padding:28px 20px;
+  border-right:1px solid #e8e0d8;flex:1;min-width:100px;
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-family:'Cormorant Garamond',serif;font-size:32px;
+  font-weight:600;color:var(--dark);line-height:1;
+}
+.stat-num span{color:var(--blush)}
+.stat-label{
+  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-top:5px;font-weight:500;
+}
+
+/* SECTION LABEL */
+.section-label{
+  text-align:center;padding:36px 20px 24px;
+  font-size:10px;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+  background:var(--cream);
+}
+
+/* GRID */
+.image-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:3px;background:var(--cream);
+  width:100%;
+}
+.grid-card{position:relative;overflow:hidden;cursor:pointer;display:block;text-decoration:none;width:100%}
+.grid-card img{
+  width:100%;height:320px;object-fit:cover;object-position:center top;
+  display:block;transition:transform .65s ease;
+}
+.grid-card:hover img{transform:scale(1.04)}
+.card-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(10,10,18,.85) 0%,transparent 100%);
+  padding:36px 20px 22px;
+}
+.card-tag{
+  display:inline-block;font-size:9px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:6px;font-weight:500;
+}
+.card-overlay h3{
+  font-family:'Cormorant Garamond',serif;font-size:22px;
+  font-weight:600;color:white;line-height:1.2;
+}
+.card-overlay p{color:rgba(255,255,255,.6);font-size:11px;margin-top:5px;letter-spacing:1px}
+
+/* QUOTE */
+.quote-strip{background:var(--dark);padding:56px 24px;text-align:center;width:100%}
+.quote-strip blockquote{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(18px,4vw,28px);color:var(--white);
+  max-width:600px;margin:0 auto;line-height:1.7;font-weight:300;
+}
+.quote-strip blockquote::before{content:'\201C';color:var(--blush);font-size:1.4em;line-height:0;vertical-align:-.3em;margin-right:4px}
+.quote-strip blockquote::after{content:'\201D';color:var(--blush);font-size:1.4em;line-height:0;vertical-align:-.3em;margin-left:4px}
+.quote-author{margin-top:18px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}
+
+/* CPA */
+.cpa-container{padding:56px 16px;background:var(--cream);text-align:center;width:100%}
+.cpa-card{
+  background:var(--dark);color:white;
+  max-width:600px;margin:0 auto;
+  padding:48px 28px;position:relative;overflow:hidden;
+}
+.cpa-card::before,.cpa-card::after{
+  content:'';position:absolute;width:36px;height:36px;
+  border-color:var(--gold);border-style:solid;
+}
+.cpa-card::before{top:16px;left:16px;border-width:1px 0 0 1px}
+.cpa-card::after{bottom:16px;right:16px;border-width:0 1px 1px 0}
+.cpa-glow{
+  position:absolute;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,184,204,.12) 0%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.cpa-sponsor{font-size:9px;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:block}
+.cpa-script{font-family:'Great Vibes',cursive;font-size:50px;color:var(--blush);line-height:1;margin-bottom:6px}
+.cpa-card h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(26px,6vw,40px);margin-bottom:16px;
+  color:var(--white);font-weight:600;line-height:1.15;
+}
+.cpa-card>p{
+  font-size:13px;opacity:.72;line-height:1.85;font-weight:300;
+  max-width:440px;margin:0 auto 32px;
+}
+.luxe-button{
+  display:inline-block;padding:17px 44px;
+  background:linear-gradient(135deg,var(--blush) 0%,#e898b8 100%);
+  color:var(--dark);text-decoration:none;font-weight:600;
+  font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  transition:all .35s;position:relative;overflow:hidden;
+  border:none;cursor:pointer;font-family:'Jost',sans-serif;
+}
+.luxe-button:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(240,184,204,.4)}
+.cpa-fine{margin-top:18px;font-size:10px;opacity:.3;letter-spacing:1px}
+
+/* FOOTER */
+footer{background:var(--dark);padding:36px 20px;text-align:center;width:100%}
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;
+  letter-spacing:5px;text-transform:uppercase;color:var(--white);
+  text-decoration:none;display:inline-block;margin-bottom:14px;
+}
+.footer-logo span{color:var(--blush)}
+.footer-line{width:36px;height:1px;background:var(--gold);margin:0 auto 14px}
+footer p{font-size:9px;color:rgba(255,255,255,.25);letter-spacing:2px;text-transform:uppercase}
+
+/* ── TABLET ── */
+@media(min-width:600px){
+  .image-grid{grid-template-columns:repeat(3,1fr)}
+  .grid-card img{height:400px}
+  .hero{height:500px}
+  .hero-content{padding:0 48px 48px;max-width:640px}
+  .site-header{padding:18px 40px}
+  .nav-links{display:flex}
+  .cpa-card{padding:60px 52px}
+}
+
+/* ── DESKTOP ── */
+@media(min-width:900px){
+  .grid-card img{height:480px}
+  .hero{height:580px}
+  .stat-item{padding:36px 40px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">✦ &nbsp; Prom Season 2026 — Win a $750 Gift Card &nbsp; ✦</div>
+
+<header class="site-header">
+  <a class="logo" href="https://authenticateapp.store/cl/i/m53oo2">THE PROM <span>EDITORIAL</span></a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#trends">Trends</a></li>
+      <li><a href="#trends">Hairstyles</a></li>
+      <li><a href="https://authenticateapp.store/cl/i/m53oo2">Giveaway</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <img src="https://images.pexels.com/photos/33404440/pexels-photo-33404440.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=900&w=1400" alt="Elegant prom look" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Collection 2026</span>
+    <h1>The Art of<br>the <em>Prom Look</em></h1>
+    <p class="hero-sub">Defining a generation of effortless beauty</p>
+    <div class="hero-actions">
+      <a href="https://authenticateapp.store/cl/i/m53oo2" class="hero-badge filled">Claim $750</a>
+      <a href="https://authenticateapp.store/cl/i/m53oo2" class="hero-badge">Explore Trends</a>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider">
+  <span class="script">The Muse Aesthetic</span>
+  <div class="line"><div class="diamond"></div></div>
+</div>
+
+<section class="editorial-section">
+  <h2>"Finding the perfect look is as crucial as the dress itself."</h2>
+  <p>2026 is moving away from the <b>over-done</b> to the <b>effortlessly polished</b>. This season champions natural beauty elevated by precision and confidence — where every curl, every pin, every strand tells a story of quiet luxury.</p>
+</section>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">42<span>k+</span></div>
+    <div class="stat-label">Girls Inspired</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">98<span>%</span></div>
+    <div class="stat-label">Love Their Look</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">$750</div>
+    <div class="stat-label">Gift Card Value</div>
+  </div>
+</div>
+
+<div class="section-label" id="trends">✦ &nbsp; The 2026 Trend Edit &nbsp; ✦</div>
+
+<div class="image-grid">
+  <a class="grid-card" href="https://authenticateapp.store/cl/i/m53oo2">
+    <img src="https://images.pexels.com/photos/34932301/pexels-photo-34932301.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=550" alt="Cascading Waves">
+    <div class="card-overlay">
+      <span class="card-tag">Trend No. 01</span>
+      <h3>Cascading Waves</h3>
+      <p>Soft volume, cinema-ready finish</p>
+    </div>
+  </a>
+  <a class="grid-card" href="https://authenticateapp.store/cl/i/m53oo2">
+    <img src="https://images.pexels.com/photos/31255042/pexels-photo-31255042.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=550" alt="The It-Girl Updo">
+    <div class="card-overlay">
+      <span class="card-tag">Trend No. 02</span>
+      <h3>The It-Girl Updo</h3>
+      <p>Sculptural elegance, pearl-kissed details</p>
+    </div>
+  </a>
+  <a class="grid-card" href="https://authenticateapp.store/cl/i/m53oo2">
+    <img src="https://images.pexels.com/photos/5934458/pexels-photo-5934458.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=550" alt="Boho Luxe">
+    <div class="card-overlay">
+      <span class="card-tag">Trend No. 03</span>
+      <h3>Boho Luxe</h3>
+      <p>Free-spirited yet undeniably refined</p>
+    </div>
+  </a>
+</div>
+
+<div class="quote-strip">
+  <blockquote>A great hairstyle doesn't just complete a look — it becomes the look. This is your moment to shine.</blockquote>
+  <p class="quote-author">— The Prom Editorial, 2026</p>
+</div>
+
+<section class="cpa-container">
+  <div class="cpa-card">
+    <div class="cpa-glow"></div>
+    <span class="cpa-sponsor">Sponsored by Lumière</span>
+    <div class="cpa-script">Win Big</div>
+    <h2>Claim Your $750<br>Gift Card</h2>
+    <p>To celebrate the 2026 Prom Season, we're awarding one lucky girl a $750 Gift Card for SHEIN or Amazon. Secure your look — enter today.</p>
+    <a href="https://authenticateapp.store/cl/i/m53oo2" class="luxe-button">✦ &nbsp; Claim My Entry &nbsp; ✦</a>
+    <p class="cpa-fine">*Valid for May 2026 only. One entry per person.*</p>
+  </div>
+</section>
+
+<footer>
+  <a class="footer-logo" href="https://authenticateapp.store/cl/i/m53oo2">THE PROM <span>EDITORIAL</span></a>
+  <div class="footer-line"></div>
+  <p>&copy; 2026 The Prom Editorial. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
